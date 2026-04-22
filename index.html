@@ -1,192 +1,609 @@
-export default function BCCBowerConstructionLandingPage() { const services = [ "New house builds", "Extensions & conversions", "Kitchen fitting", "Bathroom renovations", "General building work", "Flat refurbishments", ];
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BCC | Bowers Construction Company</title>
+  <meta name="description" content="BCC | Bowers Construction Company - Building, renovation, kitchens, bathrooms, extensions and general construction work." />
+  <style>
+    :root {
+      --bg: #f5f5f5;
+      --surface: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --brand: #b45309;
+      --brand-dark: #92400e;
+      --dark: #111827;
+      --line: #e5e7eb;
+      --shadow: 0 12px 30px rgba(0,0,0,0.08);
+      --radius: 18px;
+      --max: 1180px;
+    }* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
 
-const projects = [ { title: "Full House Build", description: "Modern residential build completed from groundwork to final finish.", }, { title: "Kitchen Renovation", description: "Complete kitchen refit with bespoke finishes and improved layout.", }, { title: "Flat Refurbishment", description: "Internal upgrade and repair work to refresh and modernise the property.", }, ];
+a { text-decoration: none; color: inherit; }
+img { width: 100%; display: block; }
 
-return ( <div className="min-h-screen bg-white text-zinc-900"> <header className="border-b border-zinc-200 bg-white/95 backdrop-blur sticky top-0 z-50"> <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"> <div className="flex items-center gap-3"> <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-zinc-300 bg-zinc-900 text-lg font-extrabold tracking-widest text-white shadow-sm"> BCC </div> <div> <div className="text-lg font-extrabold tracking-wide uppercase">BCC Bower Construction Company</div> <div className="text-sm text-zinc-600">Reliable building, kitchens, renovations & property work</div> </div> </div>
+.container {
+  width: min(100% - 2rem, var(--max));
+  margin: 0 auto;
+}
 
-<nav className="hidden gap-6 md:flex text-sm font-medium text-zinc-700">
-        <a href="#services" className="hover:text-zinc-950">Services</a>
-        <a href="#work" className="hover:text-zinc-950">Previous Work</a>
-        <a href="#book" className="hover:text-zinc-950">Book a Job</a>
-        <a href="#contact" className="hover:text-zinc-950">Contact</a>
-      </nav>
-    </div>
-  </header>
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(17, 24, 39, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
 
-  <main>
-    <section className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
-      <div>
-        <p className="mb-3 inline-flex rounded-full border border-zinc-300 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-700">
-          Professional Building & Renovation Services
-        </p>
-        <h1 className="max-w-2xl text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
-          Trusted construction work for homes, flats, kitchens and full property projects.
-        </h1>
-        <p className="mt-5 max-w-xl text-base leading-7 text-zinc-600 md:text-lg">
-          From full house builds to kitchens, refurbishments and structural work, BCC Bower Construction Company delivers dependable craftsmanship with a straightforward approach.
-        </p>
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
 
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a
-            href="#book"
-            className="inline-flex items-center justify-center rounded-2xl bg-zinc-900 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5"
-          >
-            Book a Job
-          </a>
-          <a
-            href="#work"
-            className="inline-flex items-center justify-center rounded-2xl border border-zinc-300 px-6 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-50"
-          >
-            View Previous Work
-          </a>
-        </div>
+.logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
 
-        <div className="mt-8 grid max-w-xl grid-cols-1 gap-4 sm:grid-cols-3">
-          <div className="rounded-2xl border border-zinc-200 p-4 shadow-sm">
-            <div className="text-2xl font-extrabold">BCC</div>
-            <div className="text-sm text-zinc-600">Professional branding</div>
-          </div>
-          <div className="rounded-2xl border border-zinc-200 p-4 shadow-sm">
-            <div className="text-2xl font-extrabold">Homes</div>
-            <div className="text-sm text-zinc-600">New builds & major work</div>
-          </div>
-          <div className="rounded-2xl border border-zinc-200 p-4 shadow-sm">
-            <div className="text-2xl font-extrabold">Kitchens</div>
-            <div className="text-sm text-zinc-600">Fit-outs & renovations</div>
-          </div>
-        </div>
-      </div>
+.logo-mark {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+}
 
-      <div className="grid gap-4">
-        <div className="rounded-3xl border border-zinc-200 bg-zinc-100 p-3 shadow-sm">
-          <div className="flex aspect-[4/3] items-center justify-center rounded-2xl border border-dashed border-zinc-300 bg-white text-center text-sm text-zinc-500">
-            Add featured project photo here
-          </div>
-        </div>
-        <div className="grid grid-cols-2 gap-4">
-          <div className="rounded-3xl border border-zinc-200 bg-zinc-100 p-3 shadow-sm">
-            <div className="flex aspect-square items-center justify-center rounded-2xl border border-dashed border-zinc-300 bg-white text-center text-sm text-zinc-500">
-              Kitchen photo
-            </div>
-          </div>
-          <div className="rounded-3xl border border-zinc-200 bg-zinc-100 p-3 shadow-sm">
-            <div className="flex aspect-square items-center justify-center rounded-2xl border border-dashed border-zinc-300 bg-white text-center text-sm text-zinc-500">
-              Build photo
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+.logo-text {
+  font-size: 0.88rem;
+  color: #d1d5db;
+  margin-top: 0.2rem;
+  letter-spacing: 0.5px;
+}
 
-    <section id="services" className="bg-zinc-50 py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="max-w-2xl">
-          <h2 className="text-3xl font-extrabold tracking-tight">Services</h2>
-          <p className="mt-3 text-zinc-600">
-            A strong first site should be simple: show what he does, show proof, make contact easy. No circus tricks needed.
-          </p>
-        </div>
+.nav-links {
+  display: flex;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #f9fafb;
+  font-size: 0.95rem;
+}
 
-        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <div key={service} className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-bold">{service}</h3>
-              <p className="mt-2 text-sm leading-6 text-zinc-600">
-                Clear, professional service presentation for customers who just want to know: can this bloke do the job or not?
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+.nav-links a:hover { color: #fbbf24; }
 
-    <section id="work" className="py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-extrabold tracking-tight">Previous Work</h2>
-            <p className="mt-3 text-zinc-600">
-              This section matters. Good construction sites live or die on real photos. Decent pictures do half the selling for you.
-            </p>
-          </div>
-          <a href="#contact" className="text-sm font-semibold text-zinc-900 underline underline-offset-4">
-            Ask about similar work
-          </a>
-        </div>
+.hero {
+  position: relative;
+  min-height: 86vh;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(rgba(17,24,39,0.65), rgba(17,24,39,0.72)),
+    url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  color: white;
+}
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-3">
-          {projects.map((project) => (
-            <article key={project.title} className="overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-sm">
-              <div className="flex aspect-[4/3] items-center justify-center bg-zinc-100 text-sm text-zinc-500">
-                Project image placeholder
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold">{project.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-zinc-600">{project.description}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+.hero-content {
+  text-align: center;
+  max-width: 860px;
+  padding: 3rem 0;
+}
 
-    <section id="book" className="bg-zinc-900 py-16 text-white lg:py-20">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-2">
-          <div>
-            <h2 className="text-3xl font-extrabold tracking-tight">Book a Job</h2>
-            <p className="mt-3 max-w-xl text-zinc-300">
-              Make it dead simple: customer sends name, phone, email, job type and a short message. That’s enough to start the ball rolling.
-            </p>
-          </div>
+.eyebrow {
+  display: inline-block;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  margin-bottom: 1rem;
+  font-size: 0.92rem;
+}
 
-          <form className="grid gap-4 rounded-3xl bg-white p-6 text-zinc-900 shadow-xl">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <input className="rounded-2xl border border-zinc-300 px-4 py-3 outline-none" placeholder="Full name" />
-              <input className="rounded-2xl border border-zinc-300 px-4 py-3 outline-none" placeholder="Phone number" />
-            </div>
-            <input className="rounded-2xl border border-zinc-300 px-4 py-3 outline-none" placeholder="Email address" />
-            <input className="rounded-2xl border border-zinc-300 px-4 py-3 outline-none" placeholder="Type of job needed" />
-            <textarea className="min-h-32 rounded-2xl border border-zinc-300 px-4 py-3 outline-none" placeholder="Tell us about the work you need done" />
-            <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-2xl bg-zinc-900 px-6 py-3 text-sm font-semibold text-white"
-            >
-              Send Enquiry
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
+h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 6vw, 4.8rem);
+  line-height: 1.05;
+  letter-spacing: -1px;
+}
 
-    <section id="contact" className="py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid gap-6 rounded-3xl border border-zinc-200 bg-zinc-50 p-8 shadow-sm lg:grid-cols-3">
-          <div>
-            <h2 className="text-2xl font-extrabold">Contact BCC</h2>
-            <p className="mt-3 text-zinc-600">
-              Add the real details here once you’ve got them. Keep them visible. Builders don’t need customers hunting around like it’s a treasure map.
-            </p>
-          </div>
-          <div className="rounded-2xl bg-white p-6 shadow-sm">
-            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Email</div>
-            <div className="mt-2 text-lg font-bold">hello@bccconstruction.co.uk</div>
-          </div>
-          <div className="rounded-2xl bg-white p-6 shadow-sm">
-            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Phone</div>
-            <div className="mt-2 text-lg font-bold">01234 567890</div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+.hero p {
+  font-size: 1.1rem;
+  color: #e5e7eb;
+  max-width: 720px;
+  margin: 1rem auto 0;
+}
 
-  <footer className="border-t border-zinc-200 py-8">
-    <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 text-sm text-zinc-600 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-      <div>© 2026 BCC Bower Construction Company. All rights reserved.</div>
-      <div>Professional building services for homes, flats, kitchens and renovations.</div>
-    </div>
-  </footer>
+.hero-actions,
+.cta-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 170px;
+  padding: 0.95rem 1.3rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.2s ease;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary {
+  background: var(--brand);
+  color: white;
+}
+
+.btn-primary:hover { background: var(--brand-dark); transform: translateY(-2px); }
+
+.btn-secondary {
+  background: rgba(255,255,255,0.12);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.btn-secondary:hover { background: rgba(255,255,255,0.18); transform: translateY(-2px); }
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-head {
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto 2.2rem;
+}
+
+.section-head h2 {
+  margin: 0 0 0.8rem;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+}
+
+.section-head p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.quick-contact {
+  margin-top: -55px;
+  position: relative;
+  z-index: 10;
+}
+
+.quick-contact-grid {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.quick-card {
+  padding: 1.4rem;
+  border-right: 1px solid var(--line);
+}
+
+.quick-card:last-child { border-right: 0; }
+.quick-card h3 { margin: 0 0 0.35rem; font-size: 1rem; }
+.quick-card p, .quick-card a { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+.services-grid,
+.projects-grid {
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+}
+
+.card-body {
+  padding: 1.2rem;
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.project-image {
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-box {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+
+.about-box ul {
+  padding-left: 1.2rem;
+  margin: 1rem 0 0;
+  color: var(--muted);
+}
+
+.cta-band {
+  background: linear-gradient(135deg, #111827, #1f2937);
+  color: white;
+  border-radius: 24px;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 1.5rem;
+}
+
+.contact-card,
+.form-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  padding: 1.5rem;
+}
+
+.contact-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.contact-item {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fafafa;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  font: inherit;
+  background: white;
+}
+
+textarea { min-height: 140px; resize: vertical; }
+
+.footer {
+  background: #111827;
+  color: #d1d5db;
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.small { font-size: 0.92rem; color: var(--muted); }
+
+@media (max-width: 980px) {
+  .quick-contact-grid,
+  .services-grid,
+  .projects-grid,
+  .about-grid,
+  .contact-wrap {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .quick-card:nth-child(2),
+  .quick-card:nth-child(4) { border-right: 0; }
+}
+
+@media (max-width: 720px) {
+  .nav { align-items: flex-start; flex-direction: column; }
+  .nav-links { gap: 0.8rem; }
+  .quick-contact-grid,
+  .services-grid,
+  .projects-grid,
+  .about-grid,
+  .contact-wrap {
+    grid-template-columns: 1fr;
+  }
+  .quick-card { border-right: 0; border-bottom: 1px solid var(--line); }
+  .quick-card:last-child { border-bottom: 0; }
+  .cta-band { flex-direction: column; align-items: flex-start; }
+  h1 { font-size: 2.4rem; }
+}
+
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#home" class="logo">
+        <span class="logo-mark">BCC</span>
+        <span class="logo-text">Bowers Construction Company</span>
+      </a><nav class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">My Work</a>
+    <a href="#contact">Contact</a>
+    <a href="#book">Book a Job</a>
+  </nav>
 </div>
 
-); }
+  </header>  <section class="hero" id="home">
+    <div class="container hero-content">
+      <span class="eyebrow">Trusted local building and renovation work</span>
+      <h1>BCC<br />Bowers Construction Company</h1>
+      <p>
+        From full house builds to kitchens, bathrooms, extensions and general construction work,
+        we deliver solid workmanship with a clean, professional finish.
+      </p><div class="hero-actions">
+    <a class="btn btn-primary" href="#projects">Have a Look at My Work</a>
+    <a class="btn btn-secondary" href="#book">Book a Job</a>
+  </div>
+</div>
+
+  </section>  <section class="quick-contact">
+    <div class="container">
+      <div class="quick-contact-grid">
+        <div class="quick-card">
+          <h3>Call us</h3>
+          <a href="tel:07123456789">07123 456789</a>
+        </div>
+        <div class="quick-card">
+          <h3>Email us</h3>
+          <a href="mailto:info@bcc-placeholder.co.uk">info@bcc-placeholder.co.uk</a>
+        </div>
+        <div class="quick-card">
+          <h3>WhatsApp</h3>
+          <a href="https://wa.me/447123456789" target="_blank" rel="noreferrer">Message on WhatsApp</a>
+        </div>
+        <div class="quick-card">
+          <h3>Free quotes</h3>
+          <a href="#book">Request a quote</a>
+        </div>
+      </div>
+    </div>
+  </section>  <section class="section" id="about">
+    <div class="container about-grid">
+      <div>
+        <div class="section-head" style="text-align:left; margin:0 0 1rem 0;">
+          <h2>Built properly. No nonsense.</h2>
+          <p>
+            A clean, straightforward company website matters because people want to see who you are,
+            what you do, and how to contact you fast. This layout does exactly that.
+          </p>
+        </div>
+        <div class="about-box">
+          <strong>What this site helps with:</strong>
+          <ul>
+            <li>Show previous work clearly</li>
+            <li>Make it easy for customers to call, email or WhatsApp</li>
+            <li>Let people request a quote or book a job</li>
+            <li>Look professional enough to win trust fast</li>
+          </ul>
+        </div>
+      </div><div class="card">
+    <img class="project-image" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80" alt="Construction project" />
+    <div class="card-body">
+      <h3>Professional local builder</h3>
+      <p>Replace this image later with one of your friend's real jobs for a stronger first impression.</p>
+    </div>
+  </div>
+</div>
+
+  </section>  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>What we do</h2>
+        <p>Adjust these services to match exactly what your friend offers.</p>
+      </div><div class="services-grid">
+    <article class="card">
+      <div class="card-body">
+        <h3>House Builds</h3>
+        <p>Full construction work from the ground up with dependable project handling.</p>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-body">
+        <h3>Kitchens & Bathrooms</h3>
+        <p>Fitted kitchens, bathroom upgrades, refits and finishing work done properly.</p>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-body">
+        <h3>Extensions & Renovations</h3>
+        <p>Extra space, internal upgrades, structural changes and property improvements.</p>
+      </div>
+    </article>
+  </div>
+</div>
+
+  </section>  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-head">
+        <h2>Have a look at my work</h2>
+        <p>This middle section is where the money gets helped along — people trust builders when they can see real jobs.</p>
+      </div><div class="projects-grid">
+    <article class="card">
+      <img class="project-image" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80" alt="Kitchen fitting project" />
+      <div class="card-body">
+        <h3>Modern Kitchen Installation</h3>
+        <p>Placeholder text. Swap this with a short description of the real kitchen job.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img class="project-image" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80" alt="House renovation project" />
+      <div class="card-body">
+        <h3>Full Property Renovation</h3>
+        <p>Placeholder text. Add job details like location, type of work and finish.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img class="project-image" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Bathroom project" />
+      <div class="card-body">
+        <h3>Bathroom Refurbishment</h3>
+        <p>Placeholder text. Real before/after photos will make this section much stronger.</p>
+      </div>
+    </article>
+  </div>
+</div>
+
+  </section>  <section class="section">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2 style="margin:0 0 0.4rem;">Need building work done?</h2>
+          <p style="margin:0; color:#d1d5db;">Call, email, or send a WhatsApp message and get a quote started.</p>
+        </div>
+        <div class="cta-row" style="margin-top:0;">
+          <a class="btn btn-primary" href="tel:07123456789">Call now</a>
+          <a class="btn btn-secondary" href="#contact">Get in touch</a>
+        </div>
+      </div>
+    </div>
+  </section>  <section class="section" id="contact">
+    <div class="container contact-wrap">
+      <div class="contact-card">
+        <h2>Contact BCC</h2>
+        <p class="small">Use placeholders for now, then swap in the real details when your friend confirms them.</p><div class="contact-list">
+      <div class="contact-item">
+        <strong>Phone</strong><br />
+        <a href="tel:07123456789">07123 456789</a>
+      </div>
+      <div class="contact-item">
+        <strong>Email</strong><br />
+        <a href="mailto:info@bcc-placeholder.co.uk">info@bcc-placeholder.co.uk</a>
+      </div>
+      <div class="contact-item">
+        <strong>WhatsApp</strong><br />
+        <a href="https://wa.me/447123456789" target="_blank" rel="noreferrer">https://wa.me/447123456789</a>
+      </div>
+      <div class="contact-item">
+        <strong>Opening hours</strong><br />
+        Mon - Sat | 8:00am - 6:00pm
+      </div>
+    </div>
+  </div>
+
+  <div class="form-card" id="book">
+    <h2>Book a job / request a quote</h2>
+    <p class="small">This form uses WhatsApp so leads go straight to the phone. Simple and effective.</p>
+
+    <form id="quoteForm">
+      <div>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your name" required />
+      </div>
+
+      <div>
+        <label for="phone">Phone number</label>
+        <input id="phone" name="phone" type="tel" placeholder="Your number" required />
+      </div>
+
+      <div>
+        <label for="service">Type of work</label>
+        <select id="service" name="service" required>
+          <option value="">Choose a service</option>
+          <option>Full House Build</option>
+          <option>Kitchen</option>
+          <option>Bathroom</option>
+          <option>Extension</option>
+          <option>Renovation</option>
+          <option>General Construction</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="message">Job details</label>
+        <textarea id="message" name="message" placeholder="Tell us what work you need done"></textarea>
+      </div>
+
+      <button class="btn btn-primary" type="submit">Send booking to WhatsApp</button>
+    </form>
+  </div>
+</div>
+
+  </section>  <footer class="footer">
+    <div class="container footer-row">
+      <div>
+        <strong style="color:white;">BCC | Bowers Construction Company</strong><br />
+        <span class="small">Professional building work, straightforward service.</span>
+      </div>
+      <div class="small">© 2026 BCC. All rights reserved.</div>
+    </div>
+  </footer>  <script>
+    document.getElementById('quoteForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const service = document.getElementById('service').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const text = `New BCC website enquiry:%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AService: ${encodeURIComponent(service)}%0AJob details: ${encodeURIComponent(message)}`;
+
+      window.open(`https://wa.me/447123456789?text=${text}`, '_blank');
+    });
+  </script></body>
+</html>
